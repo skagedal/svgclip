@@ -1,3 +1,31 @@
+
+svgclip (updated)
+=======
+
+I found this package today and after some trial and error was able to get this script to clip an svg image. Since it looks like this is no longer maintained I thought I'd document how I got this to work in Ubuntu 19.04. 
+
+I am not a python developer and I am not positive which of these items I installed were needed or not. Here's what I installed:
+
+```bash
+sudo apt install python-pip
+sudo apt-get install inkscape python-rsvg python-cairo # from the documentation. python-rsvg doesn't seem to exist anymore though so,
+sudo apt-get install inkscape python-cairo # I think this didn't install the write package
+sudo apt-get install librsvg2-bin # may or may not be necessary?
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module # may or may not be necessary?
+sudo apt-get install python-gi-cairo # I'm pretty sure this is what got python cairo to work
+```
+
+I had to modify the script after some errors were produced after I finally got the right packages installed. See script for more details. 
+   
+   
+   
+   
+   
+   
+---
+ORIGINAL README BELOW
+---
+
 svgclip
 =======
 
