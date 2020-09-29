@@ -19,9 +19,13 @@ right dimensions.
 
 Since it was easy, I also added an option to add a margin to the drawing.
 
-Make sure you have Inkscape, python-rsvg and python-cairo installed
-(on Ubuntu, try `sudo apt-get install inkscape python-rsvg python-cairo`)
-and then run `svgclip.py inputfile -o outputfile [-m marginpixels]`.
+## Requirements
+
+`apt-get install inkscape gir1.2-rsvg-2.0 python-gi-cairo`
+
+## Usage
+
+`svgclip.py inputfile -o outputfile [-m marginpixels]`
 
 Regards,
 Simon Kågedal Reimer
