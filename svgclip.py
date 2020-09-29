@@ -31,6 +31,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 import argparse
 import subprocess
 import cairo
+gi.require_version('Rsvg', '2.0')
+gi.require_foreign("cairo")
 from gi.repository import Rsvg
 
 def query_svg(svgfile):
