@@ -31,15 +31,15 @@ OTHER DEALINGS IN THE SOFTWARE.
 import argparse
 import subprocess
 import cairo
-import rsvg
+from gi.repository import Rsvg
 
 def query_svg(svgfile):
     """Parses the output from inkscape --query-all"""
     def parse_line(line):
-        split = line.split(',')
+        split = line.split(b',')
         return [split[0]] + [float(x) for x in split[1:]]
     output = subprocess.check_output(["inkscape", "--query-all", svgfile])
-    lines = output.split('\n')
+    lines = output.split(b'\n')
     return [parse_line(line) for line in lines]
 
 def get_bounding_box(svgfile):
@@ -58,7 +58,8 @@ Height: %f""".strip() % tuple(bbox[1:]))
 def clip(inputfile, outputfile, margin):
     name, x, y, width, height = get_bounding_box(inputfile)
     
-    svg = rsvg.Handle(file=inputfile)
+    handle = Rsvg.Handle()
+    svg = handle.new_from_file(inputfile)
     surface = cairo.SVGSurface(outputfile, 
                                width + margin * 2, 
                                height + margin * 2)
@@ -88,6 +89,3 @@ if __name__ == "__main__":
         print_info(args.input)
     else:
         clip(args.input, args.output, args.margin)
-
-
-
