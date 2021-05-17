@@ -2,8 +2,19 @@ svgclip
 =======
 
 Sometimes you have an SVG file and you want to reduce its size to the
-actual drawing.  I have had a hard time finding a good way to do this
-programmatically, for batch processing or other.
+actual drawing.  I had a hard time finding a good way to do this
+programmatically, so I wrote this program back in 2013.
+
+**This is now possible to do only with the help of inkscape itself,** 
+according to issue submitter wz1765:
+
+```
+inkscape --export-type=svg -o --export-area-drawing ./test.svg
+```
+
+There is therefore little need for this program.
+
+## Original README contents
 
 Googling around, one method I've found is to use Inkscape. It can be
 scripted like this:
