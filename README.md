@@ -14,6 +14,8 @@ inkscape --export-type=svg -o --export-area-drawing ./test.svg
 
 There is therefore little need for this program.
 
+Another alternative is [vpype](https://github.com/abey79/vpype).
+
 ## Original README contents
 
 Googling around, one method I've found is to use Inkscape. It can be
