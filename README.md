@@ -6,10 +6,10 @@ actual drawing.  I had a hard time finding a good way to do this
 programmatically, so I wrote this program back in 2013.
 
 **This is now possible to do only with the help of inkscape itself,** 
-according to issue submitter wz1765:
+according to commenters in [this issue](https://github.com/skagedal/svgclip/issues/8):
 
 ```
-inkscape --export-type=svg -o --export-area-drawing ./test.svg
+inkscape --export-type=svg -o test_cropped.svg --export-area-drawing ./test.svg
 ```
 
 There is therefore little need for this program.
